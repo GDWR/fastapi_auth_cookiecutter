@@ -1,0 +1,7 @@
+venv/
+.pycharm/
+.idea/
+
+.gitignore
+LICENSE
+README.md

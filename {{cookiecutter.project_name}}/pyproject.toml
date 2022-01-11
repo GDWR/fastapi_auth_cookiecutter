@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "{{cookiecutter.project_name}}"
+version = "0.1.0"
+description = ""
+authors = []
+
+[tool.poetry.dependencies]
+python = "^3.8"
+bcrypt = "^3.2.0"
+passlib = "^1.7.4"
+python-dotenv = "^0.19.2"
+python-jose = { version = "^3.3.0", extras = ["cryptography"] }
+python-multipart = "^0.0.5"
+sqlmodel = "^0.0.6"
+fastapi = "^0.71.0"
+uvicorn = "^0.16.0"
+psycopg2 = "^2.9.3"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
