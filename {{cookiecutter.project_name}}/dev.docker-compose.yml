@@ -7,15 +7,19 @@ services:
       - .env
     environment:
      - "POSTGRES_PASSWORD=${DATABASE_PASSWORD}"
-
+    ports:
+      - "5432:5432"
 
   {{cookiecutter.project_name}}:
-    build: .
-    command: uvicorn main:api --host ${HOST} --port ${PORT}
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+    command: uvicorn main:api --host ${HOST} --port ${PORT} --reload
+    working_dir: /workspace
+    volumes:
+      - "./{{cookiecutter.project_name}}:/workspace"
     depends_on:
      - database
-    environment:
-      - "PRODUCTION=TRUE"
     env_file:
       - .env
     ports:

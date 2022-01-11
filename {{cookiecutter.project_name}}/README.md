@@ -1,13 +1,24 @@
 # {{cookiecutter.project_name}}
 
-### Running the project
+Requirements:
+- Docker
+- DockerCompose
 
-#### Create a Environment file
+## Running the project
+
+### Create a Environment file
 Duplicate the `template.env` as `.env`. 
 ```shell
 cp template.env .env
 ```
-Run with docker-compose
+
+#### Development
+```shell
+docker-compose -f dev.docker-compose.yml up
+```
+
+
+#### Production
 ```shell
 docker-compose up --detach
 ```
